@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-bg text-ink dark:bg-bg-dark dark:text-ink-dark antialiased;
+    font-feature-settings: "cv11", "ss01";
+  }
+
+  ::selection {
+    @apply bg-ink text-white dark:bg-white dark:text-ink;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-ink dark:ring-white ring-offset-2 ring-offset-bg dark:ring-offset-bg-dark rounded;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer utilities {
+  .section {
+    @apply mx-auto max-w-content px-6 md:px-10;
+  }
+
+  .grid-bg {
+    background-image:
+      linear-gradient(to right, #00000008 1px, transparent 1px),
+      linear-gradient(to bottom, #00000008 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .dark .grid-bg {
+    background-image:
+      linear-gradient(to right, #ffffff0a 1px, transparent 1px),
+      linear-gradient(to bottom, #ffffff0a 1px, transparent 1px);
+  }
+  @keyframes spin-cw {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spin-ccw {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.35; transform: scale(1); }
+  50% { opacity: 0.55; transform: scale(1.08); }
+}
+}
