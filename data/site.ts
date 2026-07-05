@@ -196,12 +196,28 @@ export type DevProject = {
   how: string;
   who: string;
   stack: string[];
-  githubUrl: string;
+  githubUrl?: string;
   liveUrl?: string;
   status: "Live" | "Code available";
+  featured?: boolean;
 };
 
 export const devProjects: DevProject[] = [
+  {
+    slug: "hireflow-ats",
+    name: "HireFlow — Applicant Tracking System",
+    period: "2026",
+    tagline: "A live, production ATS for managing job postings and candidate pipelines — built solo, end-to-end.",
+    description:
+      "A full-stack Applicant Tracking System where recruiters can post open roles and manage candidates through the hiring pipeline. Built entirely solo across frontend and backend, and deployed live rather than kept as a local demo.",
+    why: "Most of my other projects are Figma-only or academic exercises — I wanted one real, deployed, end-to-end system that proves I can own a product from database to UI by myself.",
+    how: "Built the frontend in React/Next.js, with backend services split across Node.js and Spring Boot, backed by a SQL database for job postings, candidates, and pipeline stage data. Deployed live so it's a working product, not just a repo.",
+    who: "Recruiters and hiring teams who need a straightforward system to track candidates through a hiring pipeline, from application to offer.",
+    stack: ["React / Next.js", "Node.js", "Spring Boot", "SQL"],
+    liveUrl: "https://hireflow-ats-sigma.vercel.app/",
+    status: "Live",
+    featured: true,
+  },
   {
     slug: "smart-tourist-safety-system",
     name: "Smart Tourist Safety System",

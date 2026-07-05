@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Github, ExternalLink, ChevronDown } from "lucide-react";
+import { Github, ExternalLink, ChevronDown, Sparkles } from "lucide-react";
 import SectionHeading from "@/components/section-heading";
 import Reveal from "@/components/reveal";
 import { devProjects } from "@/data/site";
@@ -22,7 +22,13 @@ export default function DevProjects() {
           const open = openSlug === p.slug;
           return (
             <Reveal key={p.slug} delay={i * 0.05}>
-              <div className="rounded-lg border border-line dark:border-line-dark bg-bg dark:bg-bg-dark-secondary overflow-hidden">
+              <div
+                className={`rounded-lg overflow-hidden ${
+                  p.featured
+                    ? "border-2 border-ink dark:border-white bg-bg dark:bg-bg-dark-secondary"
+                    : "border border-line dark:border-line-dark bg-bg dark:bg-bg-dark-secondary"
+                }`}
+              >
                 <button
                   onClick={() => setOpenSlug(open ? null : p.slug)}
                   aria-expanded={open}
@@ -30,6 +36,11 @@ export default function DevProjects() {
                 >
                   <div className="min-w-0">
                     <div className="flex flex-wrap items-center gap-3 mb-2">
+                      {p.featured && (
+                        <span className="inline-flex items-center gap-1 text-xs px-2.5 py-1 rounded-full bg-ink text-white dark:bg-white dark:text-ink font-medium">
+                          <Sparkles size={11} /> Featured — Real-Time Project
+                        </span>
+                      )}
                       <h3 className="text-lg font-semibold tracking-tight">{p.name}</h3>
                       <span
                         className={`text-xs px-2.5 py-1 rounded-full border ${
@@ -93,14 +104,16 @@ export default function DevProjects() {
                     </div>
 
                     <div className="flex flex-wrap gap-3 mt-7">
-                      <a
-                        href={p.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 rounded-full border border-line dark:border-line-dark px-5 py-2.5 text-sm font-medium hover:bg-bg-secondary dark:hover:bg-bg-dark transition-colors"
-                      >
-                        <Github size={15} /> View Code
-                      </a>
+                      {p.githubUrl && (
+                        <a
+                          href={p.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 rounded-full border border-line dark:border-line-dark px-5 py-2.5 text-sm font-medium hover:bg-bg-secondary dark:hover:bg-bg-dark transition-colors"
+                        >
+                          <Github size={15} /> View Code
+                        </a>
+                      )}
                       {p.liveUrl && (
                         <a
                           href={p.liveUrl}

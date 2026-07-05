@@ -49,7 +49,9 @@
       linear-gradient(to right, #ffffff0a 1px, transparent 1px),
       linear-gradient(to bottom, #ffffff0a 1px, transparent 1px);
   }
-  @keyframes spin-cw {
+}
+
+@keyframes spin-cw {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
@@ -62,5 +64,4 @@
 @keyframes glow-pulse {
   0%, 100% { opacity: 0.35; transform: scale(1); }
   50% { opacity: 0.55; transform: scale(1.08); }
-}
 }
