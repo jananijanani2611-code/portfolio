@@ -277,6 +277,27 @@ export const devProjects: DevProject[] = [
   },
 ];
 
+export type GraphicDesign = {
+  slug: string;
+  title: string;
+  category: string;
+  tools: string[];
+  image: string;
+  description: string;
+};
+
+export const graphicDesigns: GraphicDesign[] = [
+  {
+    slug: "best-ever-perfume-poster",
+    title: "Best Ever Perfume — Product Poster",
+    category: "Poster Design",
+    tools: ["Canva"],
+    image: "/images/case-studies/perfume-poster.png",
+    description:
+      "A product poster built around contrast: a warm gold perfume bottle lit against a black background, with drifting smoke and gilded leaf accents framing the composition. The headline pairs a loose script ('Best Ever') with a bold condensed display word ('Perfume') in the same gold tone as the bottle, tying the type directly to the product rather than treating it as a separate element. The bottle sits centered on a simple two-tone pedestal, keeping the composition symmetrical and letting the smoke do the work of adding movement without competing with the product.",
+  },
+];
+
 export type CaseStudySection = {
   heading: string;
   body: string;
@@ -941,6 +962,131 @@ export const projects: Project[] = [
         "Color can carry brand recognition as effectively as typography when used consistently",
       ],
       nextSteps: ["Add a fifth variant to stress-test the template's flexibility", "Design a combined product line overview page"],
+    },
+  },
+  {
+    slug: "lumi-casa-furniture-website",
+    name: "LUMI CASA — Furniture Website",
+    role: "UI/UX Designer",
+    duration: "Personal project",
+    category: "Web · Ecommerce",
+    tools: ["Figma", "High-Fidelity UI"],
+    summary:
+      "An editorial-style furniture ecommerce homepage built around a warm, minimal palette and a single confident hero moment rather than a busy product grid.",
+    cover: "/images/furniture-cover.png",
+    prototypeUrl:
+      "https://www.figma.com/proto/oDchUbOnnPozTUKu6PP5ri/furniture-website?node-id=2-173&starting-point-node-id=2%3A173",
+    color: "#EDE3D9",
+    screens: [
+      {
+        src: "/images/case-studies/furniture-hero.png",
+        alt: "LUMI CASA furniture website homepage with a full-bleed living room hero and serif headline",
+        caption:
+          "The homepage leads with a single full-bleed lifestyle photograph and a large serif headline instead of a promotional carousel, letting the room itself sell the brand's taste before any product is shown.",
+      },
+    ],
+    hero: {
+      headline: "Letting the room speak before the products do",
+      subhead:
+        "A furniture ecommerce homepage that opens on atmosphere and craft, not a wall of SKUs.",
+    },
+    problem: {
+      heading: "Problem Statement",
+      body: "Furniture ecommerce homepages often open with a promotional banner and an immediate product grid, which undersells brands positioned around craft and interior styling rather than price or selection size.",
+    },
+    businessGoal: {
+      heading: "Business Goal",
+      body: "Design a homepage that reads as editorial and aspirational first, while still giving a clear, single next action into the catalog.",
+      bullets: [
+        "Lead with one strong lifestyle image instead of a rotating banner or dense grid",
+        "Keep primary navigation (Living Room, Bedroom, Dining, Office, Collections, Journal) visible but quiet",
+        "Give the page exactly one clear call to action above the fold: Explore Collection",
+      ],
+    },
+    research: {
+      heading: "Research",
+      body: "Looked at how premium furniture and interior brands use restraint — large photography, serif typography, and generous whitespace — to signal craft and price point before a single product is shown.",
+      bullets: [
+        "Warm, neutral palettes (cream, taupe, soft brown) read as premium more consistently than high-contrast palettes for home goods",
+        "A serif headline paired with a simple sans navigation is a common shorthand for 'considered, not mass-market'",
+        "A single CTA outperforms multiple competing links in the hero for guiding first-time visitors",
+      ],
+    },
+    competitorAnalysis: {
+      heading: "Competitor Analysis",
+      body: "Compared how furniture ecommerce sites balance brand storytelling against immediate product discovery on the homepage.",
+      bullets: [
+        "Mass-market sites lead with discounts and grids; premium/DTC brands lead with a single lifestyle image and one CTA",
+        "Most premium sites keep the nav bar transparent over the hero image rather than boxed in a solid header",
+      ],
+    },
+    persona: {
+      name: "Someone furnishing a home they care about",
+      age: "28–45",
+      quote: "I'm not just buying a sofa, I'm buying a room that feels like this photo.",
+      goals: ["Feel like the brand has taste before browsing products", "Find a clear next step without hunting through menus"],
+      frustrations: ["Homepages that feel like a catalog dump", "Competing banners and popups before any real content"],
+    },
+    empathyMap: {
+      thinks: ["Does this brand's taste match mine?", "Where do I even start browsing?"],
+      feels: ["Calmed by warm tones and whitespace", "Put off by clutter or urgency-driven banners"],
+      says: ["This looks like a room I'd actually want"],
+      does: ["Lingers on the hero image before scrolling", "Clicks the single clear CTA rather than hunting the nav"],
+    },
+    painPoints: [
+      "Busy homepages compete for attention with too many offers at once",
+      "Overlaid text can lose legibility against a photographic hero if contrast isn't controlled",
+      "Navigation needs to stay accessible without breaking the immersive photography",
+    ],
+    userJourney: [
+      { stage: "Land", action: "Sees full-bleed living room photography and headline", emotion: "Calmed, impressed" },
+      { stage: "Read", action: "Reads the short supporting line under the headline", emotion: "Reassured on positioning" },
+      { stage: "Act", action: "Clicks 'Explore Collection'", emotion: "Confident" },
+      { stage: "Browse", action: "Uses top nav to jump to a specific room category", emotion: "Oriented" },
+    ],
+    informationArchitecture: {
+      heading: "Information Architecture",
+      body: "Structured as: transparent nav bar (Living Room, Bedroom, Dining, Office, Collections, Journal, search/wishlist/cart/account) over a full-bleed hero photograph, serif headline, one-line supporting copy, and a single primary CTA — with the entire homepage weighted toward that first screen.",
+    },
+    taskFlow: [
+      "Land on homepage → see hero photograph and headline",
+      "Read supporting line for positioning context",
+      "Click 'Explore Collection' or a specific category in the nav",
+      "Land in the relevant product listing",
+    ],
+    wireframes: [
+      { level: "Low Fidelity", note: "Grayscale layout testing hero-image-to-text ratio and nav placement" },
+      { level: "Mid Fidelity", note: "Structured hero with placeholder photography to test headline legibility" },
+      { level: "High Fidelity", note: "Final warm, editorial visual design with real interior photography" },
+    ],
+    designSystem: {
+      typography: "Serif display headline (editorial, high-contrast strokes) paired with a simple sans for navigation and body copy",
+      colors: ["#EDE3D9", "#111111", "#FFFFFF", "#6B7280"],
+      components: ["Transparent nav bar", "Full-bleed hero", "Primary CTA button", "Category nav item"],
+      grid: "Desktop-first, full-bleed hero section, 12-column grid below the fold",
+    },
+    usabilityTesting: {
+      heading: "Usability Testing",
+      body: "Walked through the homepage with peers to confirm the single CTA was noticed and the nav stayed usable over the photographic background.",
+      bullets: [
+        "All reviewers found and used 'Explore Collection' as the primary next step without hesitation",
+        "Nav legibility over the hero image held up after a contrast pass on the transparent header",
+      ],
+    },
+    iterations: [
+      "Increased text shadow/contrast treatment on the hero headline after initial legibility concerns against bright window light in the photo",
+      "Reduced the hero copy from two sentences to one to keep the first screen uncluttered",
+    ],
+    accessibility: [
+      "Headline and CTA contrast checked against the busiest part of the background photograph, not just the average tone",
+      "Nav remains fully keyboard-navigable despite the transparent, overlaid styling",
+    ],
+    reflection: {
+      learned: [
+        "Restraint — one image, one headline, one CTA — can communicate brand positioning faster than a feature-packed homepage",
+        "Transparent navigation over photography still needs a real contrast audit, not just an aesthetic judgment call",
+      ],
+      nextSteps: ["Design the category listing and product detail pages", "Design the cart and checkout flow"],
     },
   },
 ];

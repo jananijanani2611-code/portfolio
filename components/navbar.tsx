@@ -9,6 +9,7 @@ import { profile } from "@/data/site";
 const links = [
   { href: "/#about", label: "About" },
   { href: "/#projects", label: "Design" },
+  { href: "/#graphic-design", label: "Posters" },
   { href: "/#dev-projects", label: "Development" },
   { href: "/#experience", label: "Experience" },
   { href: "/#skills", label: "Skills" },
