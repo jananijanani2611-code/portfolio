@@ -283,6 +283,7 @@ export type GraphicDesign = {
   category: string;
   tools: string[];
   image: string;
+  aspect: string; // matches the source image's real width/height, e.g. "1300/1350"
   description: string;
 };
 
@@ -293,8 +294,49 @@ export const graphicDesigns: GraphicDesign[] = [
     category: "Poster Design",
     tools: ["Canva"],
     image: "/images/case-studies/perfume-poster.png",
+    aspect: "1300/1350",
     description:
       "A product poster built around contrast: a warm gold perfume bottle lit against a black background, with drifting smoke and gilded leaf accents framing the composition. The headline pairs a loose script ('Best Ever') with a bold condensed display word ('Perfume') in the same gold tone as the bottle, tying the type directly to the product rather than treating it as a separate element. The bottle sits centered on a simple two-tone pedestal, keeping the composition symmetrical and letting the smoke do the work of adding movement without competing with the product.",
+  },
+  {
+    slug: "timeless-elegance-watch-poster",
+    title: "Timeless Elegance — Luxury Watch Poster",
+    category: "Poster Design",
+    tools: ["Canva"],
+    image: "/images/case-studies/watch-poster.png",
+    aspect: "407/567",
+    description:
+      "A luxury watch ad built on a deep navy field, with a gold sans headline ('Elevate your style') sitting above a large italic script wordmark ('Timeless Elegance') to signal heritage and craft. The watch itself is placed low in the frame over an oversized, semi-transparent 'TIMELESS' word treatment that repeats faintly in reflection below — a layering trick that adds depth without adding any extra product photography. A short supporting line and a plain 'Luxury Redefined' footer keep the copy minimal so the watch and typography carry the page.",
+  },
+  {
+    slug: "reignite-car-poster",
+    title: "Reignite — Automotive Poster",
+    category: "Poster Design",
+    tools: ["Canva"],
+    image: "/images/case-studies/car-poster.png",
+    aspect: "397/560",
+    description:
+      "A sports car poster that uses a single strong lighting cue — a thin horizontal band of orange rim light behind the car — to separate a dark, textured background from the vehicle without needing a full environment. The word 'REIGNITE' sits directly behind the car in a rough, distressed type treatment that echoes the car's aggressive character. A small inset panel lower-right ('Built to Reignite') with three additional angles works like a secondary content block, giving the poster a campaign feel rather than a single static shot.",
+  },
+  {
+    slug: "long-lasting-fragrance-poster",
+    title: "Long Lasting Fragrance — Perfume Poster",
+    category: "Poster Design",
+    tools: ["Canva"],
+    image: "/images/case-studies/fragrance-poster.png",
+    aspect: "400/570",
+    description:
+      "A perfume ad on a saturated magenta background, pairing a script logotype ('Long Lasting') with a bold serif word ('Fragrance') directly beneath it for a two-tier headline. The model, orchid, and bottle are lit and color-matched to the pink background so the product feels part of the same palette rather than dropped on top of it, and scattered petals add motion around the edges without pulling focus from the bottle. A single supporting line ('With Pink Orchid & Juniper Scent') anchors the bottom of the composition.",
+  },
+  {
+    slug: "boarding-tshirt-poster",
+    title: "Boarding — Premium T-Shirt Drop Poster",
+    category: "Poster Design",
+    tools: ["Canva"],
+    image: "/images/case-studies/tshirt-poster.png",
+    aspect: "398/567",
+    description:
+      "A product-drop poster styled like an event flyer: a starfield sky over a receding highway sets an atmospheric backdrop, with the t-shirt itself hung front and center on a wooden hanger, split down the middle between a plain white half and a patterned gold half to show off the design contrast in one image. A bold condensed 'BOARDING' word anchors the bottom third, with smaller collection and event-style details underneath — borrowing the visual language of a concert poster to make a clothing drop feel like a moment rather than just a product listing.",
   },
 ];
 

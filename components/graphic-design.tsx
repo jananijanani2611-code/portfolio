@@ -12,11 +12,14 @@ export default function GraphicDesign() {
         description="Visual design work outside of app and web interfaces — composition, typography, and mood for standalone visuals."
       />
 
-      <div className="grid md:grid-cols-2 gap-8">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {graphicDesigns.map((item, i) => (
           <Reveal key={item.slug} delay={i * 0.08}>
             <div className="rounded-lg border border-line dark:border-line-dark bg-bg dark:bg-bg-dark-secondary overflow-hidden">
-              <div className="relative aspect-[1300/1350] bg-bg-secondary dark:bg-bg-dark">
+              <div
+                className="relative bg-bg-secondary dark:bg-bg-dark"
+                style={{ aspectRatio: item.aspect }}
+              >
                 <Image
                   src={item.image}
                   alt={item.title}
